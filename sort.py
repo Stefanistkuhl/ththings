@@ -7,9 +7,14 @@ def remove_wf(df):
         if index == 911:
             runs_str = df['runs'][index]
             split = runs_str.split(",")
-            print(type(split))
-            print(split)
+            print(len(split))
             for s in split:
+                print(s)
+                set_runs = set()
+                if " (World’s First)" in s:
+                    s.strip(" (World’s First)")
+                set_runs.add(s)
+            print(set_runs)
 
     return df
 
